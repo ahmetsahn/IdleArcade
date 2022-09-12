@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        saleZoneLemonadeCount = 0;
         newTreeTextCount = 200;
         newTableTextCount = 200;
         lemonCount = 0;

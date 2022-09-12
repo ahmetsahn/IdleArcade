@@ -288,6 +288,7 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.basketActive = false;
         Vector3[] lemons1Pos = new[] { new Vector3(-0.878f, 2.724385f, -0.8719175f), new Vector3(0.03799987f, 2.690385f, -0.9569175f) };
+        Vector3[] lemons2Pos = new[] { new Vector3(-0.878f, 2.724385f, -0.8719175f), new Vector3(0.03799987f, 2.690385f, -0.9569175f), new Vector3(-0.878f, 3.412f, -0.516f), new Vector3(-0.169f, 3.366f, -0.888f) };
         yield return new WaitForSeconds(3);
         gameManager.basket.SetActive(false);
         gameManager.basket.transform.SetParent(transform);
@@ -299,29 +300,61 @@ public class PlayerController : MonoBehaviour
            gameManager.lemonade1Array[i].SetActive(true);
         }
 
-
-        foreach (var item in gameManager.lemons1)
+        if (gameManager.tree1HaveLemons == false)
         {
-
-            item.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            item.gameObject.GetComponent<SphereCollider>().enabled = true;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            
-        }
-
-        for (int i = 0; i < 2; i++)
-        {
-            if (gameManager.tree1HaveLemons == false)
+            foreach (var item in gameManager.lemons1)
             {
-               gameManager.lemons1[i].gameObject.transform.SetParent(gameManager.tree1Transform); 
-               gameManager.lemons1[i].gameObject.transform.localPosition = lemons1Pos[i];
-                
+
+                item.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                item.gameObject.GetComponent<SphereCollider>().enabled = true;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+
             }
 
+
+            for (int i = 0; i < 2; i++)
+            {
+
+                gameManager.lemons1[i].gameObject.transform.SetParent(gameManager.tree1Transform);
+                gameManager.lemons1[i].gameObject.transform.localPosition = lemons1Pos[i];
+
+
+            }
+
+            if (gameManager.tree2HaveLemons == false)
+            {
+                foreach (var item in gameManager.lemons2)
+                {
+
+                    item.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    item.gameObject.GetComponent<SphereCollider>().enabled = true;
+                    item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
+                    item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+                    item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+
+                }
+
+                for (int i = 0; i < 4; i++)
+                {
+
+                    gameManager.lemons2[i].gameObject.transform.SetParent(gameManager.tree2Transform);
+                    gameManager.lemons2[i].gameObject.transform.localPosition = lemons2Pos[i];
+
+                }
+
+
+
+
+
+            }
         }
+
 
     }
 
@@ -329,6 +362,7 @@ public class PlayerController : MonoBehaviour
     {
        gameManager.basketActive = false;
 
+        Vector3[] lemons1Pos = new[] { new Vector3(-0.878f, 2.724385f, -0.8719175f), new Vector3(0.03799987f, 2.690385f, -0.9569175f) };
         Vector3[] lemons2Pos = new[] { new Vector3(-0.878f, 2.724385f, -0.8719175f), new Vector3(0.03799987f, 2.690385f, -0.9569175f),new Vector3(-0.878f, 3.412f, -0.516f),new Vector3(-0.169f, 3.366f, -0.888f) };
 
         yield return new WaitForSeconds(3);
@@ -341,31 +375,62 @@ public class PlayerController : MonoBehaviour
            gameManager.lemonade2Array[i].SetActive(true);
         }
 
-
-
-        foreach (var item in gameManager.lemons2)
+        if(gameManager.tree1HaveLemons==false)
         {
+            foreach (var item in gameManager.lemons1)
+            {
 
-            item.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            item.gameObject.GetComponent<SphereCollider>().enabled = true;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
-            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                item.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                item.gameObject.GetComponent<SphereCollider>().enabled = true;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
-           
+
+            }
+
+
+            for (int i = 0; i < 2; i++)
+            {
+               
+                    gameManager.lemons1[i].gameObject.transform.SetParent(gameManager.tree1Transform);
+                    gameManager.lemons1[i].gameObject.transform.localPosition = lemons1Pos[i];
+
+                
+            }
         }
 
-        for (int i = 0; i < 4; i++)
+        if (gameManager.tree2HaveLemons == false)
         {
-            if(gameManager.tree2HaveLemons == false)
+            foreach (var item in gameManager.lemons2)
             {
-                gameManager.lemons2[i].gameObject.transform.SetParent(gameManager.tree2Transform);
-                gameManager.lemons2[i].gameObject.transform.localPosition = lemons2Pos[i];
-               
+
+                item.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                item.gameObject.GetComponent<SphereCollider>().enabled = true;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+                item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+
             }
+
+            for (int i = 0; i < 4; i++)
+            {
+                
+                    gameManager.lemons2[i].gameObject.transform.SetParent(gameManager.tree2Transform);
+                    gameManager.lemons2[i].gameObject.transform.localPosition = lemons2Pos[i];
+
+            }
+
+        
+
+
             
         }
+
+        
 
     }
 
