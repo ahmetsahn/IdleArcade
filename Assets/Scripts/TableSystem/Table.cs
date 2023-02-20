@@ -5,7 +5,7 @@ using UnityEngine;
 public class Table : MonoBehaviour, IInteractableWithBasket
 {
     
-    public void InteractWithPlayer()
+    public void InteractWithBasket()
     {
         GameEvents.LoadTriggerTable();
     }

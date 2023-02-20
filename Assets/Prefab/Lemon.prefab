@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capsuleCollider: {fileID: 3942811882034432462}
-  rigidbody: {fileID: 7329435142453424529}
+  rb: {fileID: 7329435142453424529}
 --- !u!136 &3942811882034432462
 CapsuleCollider:
   m_ObjectHideFlags: 0

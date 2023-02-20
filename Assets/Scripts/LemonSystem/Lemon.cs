@@ -13,7 +13,7 @@ public class Lemon : MonoBehaviour, IInteractableWithPlayer
     private CapsuleCollider capsuleCollider;
 
     [SerializeField]
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
 
     private void OnEnable() => AddListeners();
 
@@ -33,7 +33,7 @@ public class Lemon : MonoBehaviour, IInteractableWithPlayer
 
 
     public void InteractWithPlayer()
-    {
+    {  
         GameEvents.LoadBasketComponentSetActive();
         GameEvents.LoadStackLemons(this);
         SetContraintsFreeze();
@@ -52,17 +52,17 @@ public class Lemon : MonoBehaviour, IInteractableWithPlayer
    
     private void SetContraintsFreeze()
     {
-        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private void SetContraintYFalse()
     {
-        rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
     }
 
     private void SetGravityDeactive()
     {
-        rigidbody.useGravity = false;
+        rb.useGravity = false;
     }
 
     private void SetParentNull()

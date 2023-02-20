@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteractableWithBasket
 {
-    void InteractWithPlayer();
+    void InteractWithBasket();
 }

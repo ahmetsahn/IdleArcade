@@ -42,7 +42,7 @@ public class Basket : MonoBehaviour
     {
         if (other.gameObject.GetComponent<IInteractableWithBasket>() != null)
         {
-            other.gameObject.GetComponent<IInteractableWithBasket>().InteractWithPlayer();
+            other.gameObject.GetComponent<IInteractableWithBasket>().InteractWithBasket();
         }
     }
 
