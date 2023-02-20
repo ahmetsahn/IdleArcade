@@ -24,6 +24,7 @@ TagManager:
   - Lemon2
   - lemonadeOnTable2
   - Tree2
+  - Tree
   layers:
   - Default
   - TransparentFX

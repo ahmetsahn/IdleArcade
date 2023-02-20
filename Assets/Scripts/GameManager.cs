@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject newTreeZone;
     [SerializeField] GameObject newTableZone;
     
-    public GameObject[] lemons1;
-    public GameObject[] lemons2;
+    public static GameObject[] lemons1;
+    public static GameObject[] lemons2;
     public GameObject[] lemonade1Array;
     public GameObject[] lemonade2Array;
     public GameObject[] takeLemonadeArray;
@@ -34,11 +34,11 @@ public class GameManager : MonoBehaviour
     public float moneyCount;
     public GameObject treeText;
     public GameObject tableText;
-    public GameObject basket;
-    public bool basketActive = false;
+    public static GameObject basket;
+    public static bool basketActive = false;
     public bool tree1HaveLemons = true;
     public bool tree2HaveLemons = true;
-    public int lemonCount;
+    public static int lemonCount;
     public int lemonadeCount;
     public int lemonadeCount2;
     public int takeLemonadeCount;
