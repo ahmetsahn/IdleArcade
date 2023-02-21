@@ -21,6 +21,10 @@ public class Basket : MonoBehaviour
     private BoxCollider boxCollider;
 
     public List<GameObject> lemonListInBasket = new List<GameObject>();
+    
+    
+
+    public List<GameObject> lemonadeListInTable = new List<GameObject>();
 
     private void OnEnable()
     {
@@ -43,6 +47,7 @@ public class Basket : MonoBehaviour
         if (other.gameObject.GetComponent<IInteractableWithBasket>() != null)
         {
             other.gameObject.GetComponent<IInteractableWithBasket>().InteractWithBasket();
+            
         }
     }
 
@@ -69,17 +74,6 @@ public class Basket : MonoBehaviour
     {
         gameObject.transform.SetParent(null);
     }
-    
-  
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(2f);
-        SetParentPlayer();
-        SetTransformStartPos();
-        BasketComponentSetDeactive();
-        GameEvents.LoadRetryLemons();  
-        RemoveStackList();
-    }
 
     private void RemoveStackList()
     {
@@ -98,7 +92,6 @@ public class Basket : MonoBehaviour
     {
         transform.SetParent(player);
     }
-
 
     private void AddLemonToTheList(Lemon lemon)
     {
@@ -128,7 +121,31 @@ public class Basket : MonoBehaviour
         SetParentNull();
     }
 
-    
+    private void SetActiveLemonade()
+    {
+        for (int i = 0; i < lemonListInBasket.Count-1; i++)
+        { 
+            lemonadeListInTable[0].SetActive(true);
+            lemonadeListInTable.Remove(lemonadeListInTable[0]);
+        }
+
+        
+
+       
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2f);
+        SetParentPlayer();
+        SetTransformStartPos();
+        BasketComponentSetDeactive();
+        GameEvents.LoadRetryLemons();
+        SetActiveLemonade();
+        RemoveStackList();
+       
+    }
+
     private void AddListeners()
     {
         GameEvents.OnBasketComponentSetActive += BasketComponentSetActive;

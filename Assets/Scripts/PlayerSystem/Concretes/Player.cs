@@ -12,37 +12,37 @@ public class Player : MonoBehaviour
     public PlayerInput playerInput;
 
 
-    private BasePlayer currentState;
-
-    public DefaultState defaultState = new DefaultState();
-    public HaveBasketState haveBasketState = new HaveBasketState();
+    
     
 
 
     private void Start()
     {
-        currentState = defaultState;
+        
     }
 
     private void Update()
     {
-        currentState.Update(this);
+        playerMovement.Move(playerInput.joystick, playerAnimation.anim);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        currentState.OnTrigger(this, other);
+        if (other.gameObject.GetComponent<IInteractableWithPlayer>() != null)
+        {
+            other.gameObject.GetComponent<IInteractableWithPlayer>().InteractWithPlayer();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        currentState.OnCollision(this, collision);
+        if (collision.gameObject.GetComponent<IInteractableWithPlayer>() != null)
+        {
+            collision.gameObject.GetComponent<IInteractableWithPlayer>().InteractWithPlayer();
+        }
     }
 
-    public void ChangeState(BasePlayer newState)
-    {
-        currentState = newState;
-    }
+   
 
 
 }
