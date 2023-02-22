@@ -150,14 +150,14 @@ public class Basket : MonoBehaviour
     {
         GameEvents.OnBasketComponentSetActive += BasketComponentSetActive;
         GameEvents.OnStackLemons += AddLemonToTheList;
-        GameEvents.OnTriggerTable += TriggerTable;
+        GameEvents.OnTriggerReleaseLemonZone += TriggerTable;
     }
 
     private void RemoveListeners()
     {
         GameEvents.OnBasketComponentSetActive -= BasketComponentSetActive;
         GameEvents.OnStackLemons -= AddLemonToTheList;
-        GameEvents.OnTriggerTable -= TriggerTable;
+        GameEvents.OnTriggerReleaseLemonZone -= TriggerTable;
     }
 
 }

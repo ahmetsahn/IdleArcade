@@ -7,10 +7,12 @@ public class GameEvents : MonoBehaviour
 {
     public static UnityAction OnTriggerTree;
     public static UnityAction OnBasketComponentSetActive;
-    public static UnityAction OnTriggerTable;
+    public static UnityAction OnTriggerReleaseLemonZone;
+    public static UnityAction OnTriggerTakeLemonadeZone;
     public static UnityAction OnTriggerSaleZone;
     public static UnityAction<Lemon> OnStackLemons;
     public static UnityAction OnRetryLemons;
+    
     
    
 
@@ -28,7 +30,7 @@ public class GameEvents : MonoBehaviour
 
     public static void LoadTriggerTable()
     {
-        OnTriggerTable?.Invoke();
+        OnTriggerReleaseLemonZone?.Invoke();
     }
 
     public static void LoadTriggerSaleZone()
@@ -46,6 +48,11 @@ public class GameEvents : MonoBehaviour
     public static void LoadRetryLemons()
     {
         OnRetryLemons?.Invoke();
+    }
+
+    public static void LoadTriggerTakeLemonadeZone()
+    {
+        OnTriggerTakeLemonadeZone?.Invoke(); 
     }
 
 
