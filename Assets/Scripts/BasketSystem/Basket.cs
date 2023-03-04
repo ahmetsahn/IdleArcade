@@ -20,11 +20,7 @@ public class Basket : MonoBehaviour
     [SerializeField]
     private BoxCollider boxCollider;
 
-    public List<GameObject> lemonListInBasket = new List<GameObject>();
     
-    
-
-    public List<GameObject> lemonadeListInTable = new List<GameObject>();
 
     private void OnEnable()
     {
@@ -77,9 +73,9 @@ public class Basket : MonoBehaviour
 
     private void RemoveStackList()
     {
-        for (int i = lemonListInBasket.Count - 1; i > 0; i--)
+        for (int i = GameObjectList.instance.lemonListInBasket.Count - 1; i > 0; i--)
         {
-            lemonListInBasket.RemoveAt(i);
+            GameObjectList.instance.lemonListInBasket.RemoveAt(i);
         }
     }
 
@@ -102,17 +98,17 @@ public class Basket : MonoBehaviour
 
     private void AddStackList(Lemon lemon)
     {
-        lemonListInBasket.Add(lemon.gameObject);
+        GameObjectList.instance.lemonListInBasket.Add(lemon.gameObject);
     }
 
     private void SetStackPosition(Lemon lemon)
     {
-        lemon.transform.localPosition = new Vector3(0, lemonListInBasket[lemonListInBasket.Count - 1].transform.localPosition.y + 0.72f, 0);
+        lemon.transform.localPosition = new Vector3(0, GameObjectList.instance.lemonListInBasket[GameObjectList.instance.lemonListInBasket.Count - 1].transform.localPosition.y + 0.72f, 0);
     }
 
     private void SetParentStackPoint(Lemon lemon)
     {
-        lemon.transform.SetParent(lemonListInBasket[0].transform);
+        lemon.transform.SetParent(GameObjectList.instance.lemonListInBasket[0].transform);
     }
 
     private void TriggerTable()
@@ -123,15 +119,17 @@ public class Basket : MonoBehaviour
 
     private void SetActiveLemonade()
     {
-        for (int i = 0; i < lemonListInBasket.Count-1; i++)
-        { 
-            lemonadeListInTable[0].SetActive(true);
-            lemonadeListInTable.Remove(lemonadeListInTable[0]);
+        for (int i = 0; i < GameObjectList.instance.lemonListInBasket.Count-1; i++)
+        {
+            GameObjectList.instance.lemonadeOnTheTable[i].SetActive(true);
+            GameObjectList.instance.activeLemonadeListInTable.Add(GameObjectList.instance.lemonadeOnTheTable[i]);
         }
 
-        
+        for (int i = 0; i < GameObjectList.instance.lemonListInBasket.Count - 1; i++)
+        {
+            GameObjectList.instance.lemonadeOnTheTable.Remove(GameObjectList.instance.lemonadeOnTheTable[0]);
+        }
 
-       
     }
 
     IEnumerator Wait()
