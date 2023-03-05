@@ -8,6 +8,7 @@ public class TableTriggerZoneForLemonade : MonoBehaviour, IInteractableWithPlaye
 
     [SerializeField]
     private Transform player;
+    
     public void InteractWithPlayer()
     {
         
@@ -15,7 +16,6 @@ public class TableTriggerZoneForLemonade : MonoBehaviour, IInteractableWithPlaye
         {
                 gameObject.transform.SetParent(player);
                 GameObjectList.instance.lemonadeListOnThePlayer.Add(gameObject);
-                
         }
 
         GameObjectList.instance.activeLemonadeListOnTheTable.Clear();

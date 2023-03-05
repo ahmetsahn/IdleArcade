@@ -6,29 +6,25 @@ using DG.Tweening;
 
 public class SaleZoneTrigger : MonoBehaviour, IInteractableWithPlayer
 {
-    
-    
-
-
+ 
     [SerializeField]
     private Transform saleTable;
     public void InteractWithPlayer()
     {
-
-        GameEvents.LoadRetryLemonades();
-
-        for (int i = GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count; i < GameObjectList.instance.lemonadeListOnThePlayer.Count + GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count; i++)
+        if(GameObjectList.instance.lemonadeListOnThePlayer.Count>0)
         {
-            GameObjectList.instance.lemonadeListOnTheSaleTable[i].SetActive(true);
-     
+            GameEvents.LoadRetryLemonades();
+
+            GameObjectList.instance.activeLemonadeOnTheSaleTableCount += GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count;
+
+            for (int i = GameObjectList.instance.activeLemonadeOnTheSaleTableCount; i < GameObjectList.instance.activeLemonadeOnTheSaleTableCount + GameObjectList.instance.lemonadeListOnThePlayer.Count; i++)
+            {
+                GameObjectList.instance.lemonadeListOnTheSaleTable[i].SetActive(true);
+                GameObjectList.instance.activeLemonadeListOnTheSaleTable.Add(GameObjectList.instance.lemonadeListOnTheSaleTable[i]);
+            }
+
+            GameObjectList.instance.lemonadeListOnThePlayer.Clear();
         }
-        
-       
-
-
-       
-
-        GameObjectList.instance.lemonadeListOnThePlayer.Clear();
 
     }
 }

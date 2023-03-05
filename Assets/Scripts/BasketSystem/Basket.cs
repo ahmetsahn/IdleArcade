@@ -119,13 +119,13 @@ public class Basket : MonoBehaviour
 
     private void SetActiveLemonade()
     {
-        for (int i = 0; i < GameObjectList.instance.lemonListInBasket.Count-1; i++)
+        GameObjectList.instance.activeLemonadeOnTheTableCount += GameObjectList.instance.activeLemonadeListOnTheTable.Count;
+
+        for (int i = GameObjectList.instance.activeLemonadeOnTheTableCount; i < GameObjectList.instance.activeLemonadeOnTheTableCount + GameObjectList.instance.lemonListInBasket.Count-1; i++)
         {
             GameObjectList.instance.lemonadeListOnTheTable[i].SetActive(true);
             GameObjectList.instance.activeLemonadeListOnTheTable.Add(GameObjectList.instance.lemonadeListOnTheTable[i]);
         }
-
-        
 
     }
 
@@ -138,7 +138,6 @@ public class Basket : MonoBehaviour
         GameEvents.LoadRetryLemons();
         SetActiveLemonade();
         RemoveStackList();
-       
     }
 
     private void AddListeners()
