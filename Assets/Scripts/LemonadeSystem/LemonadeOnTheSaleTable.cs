@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LemonadeOnTheSaleTable : MonoBehaviour
 {
-    private Vector3 startPos;
+    public Vector3 startPos;
 
     private void Start()
     {
@@ -17,9 +17,10 @@ public class LemonadeOnTheSaleTable : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Customer"))
         {
-            gameObject.SetActive(false);
-            gameObject.transform.position = startPos;
+            transform.position = startPos;
+            gameObject.SetActive(false);   
             GameObjectList.instance.activeLemonadeListOnTheSaleTable.RemoveAt(GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count - 1);
+            Debug.Log("deðdi");
 
         }
     }
