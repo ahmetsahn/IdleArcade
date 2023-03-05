@@ -8,13 +8,17 @@ public class GameObjectList : MonoBehaviour
 
     public List<GameObject> lemonListInBasket = new List<GameObject>();
 
-    public List<GameObject> activeLemonadeListInTable = new List<GameObject>();
+    public List<GameObject> lemonadeListOnTheTable = new List<GameObject>();
 
-    public List<GameObject> lemonadeOnThePlayer = new List<GameObject>();
+    public List<GameObject> activeLemonadeListOnTheTable = new List<GameObject>();
 
-    public List<GameObject> lemonadeOnTheSaleTable = new List<GameObject>();
+    public List<GameObject> lemonadeListOnThePlayer = new List<GameObject>();
+
+    public List<GameObject> lemonadeListOnTheSaleTable = new List<GameObject>();
     
-    public List<GameObject> lemonadeOnTheTable = new List<GameObject>();
+    public List<GameObject> activeLemonadeListOnTheSaleTable = new List<GameObject>();
+    
+    
 
     private void Awake()
     {

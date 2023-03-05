@@ -121,14 +121,11 @@ public class Basket : MonoBehaviour
     {
         for (int i = 0; i < GameObjectList.instance.lemonListInBasket.Count-1; i++)
         {
-            GameObjectList.instance.lemonadeOnTheTable[i].SetActive(true);
-            GameObjectList.instance.activeLemonadeListInTable.Add(GameObjectList.instance.lemonadeOnTheTable[i]);
+            GameObjectList.instance.lemonadeListOnTheTable[i].SetActive(true);
+            GameObjectList.instance.activeLemonadeListOnTheTable.Add(GameObjectList.instance.lemonadeListOnTheTable[i]);
         }
 
-        for (int i = 0; i < GameObjectList.instance.lemonListInBasket.Count - 1; i++)
-        {
-            GameObjectList.instance.lemonadeOnTheTable.Remove(GameObjectList.instance.lemonadeOnTheTable[0]);
-        }
+        
 
     }
 

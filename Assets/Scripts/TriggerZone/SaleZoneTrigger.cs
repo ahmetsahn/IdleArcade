@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
+using DG.Tweening;
 
 public class SaleZoneTrigger : MonoBehaviour, IInteractableWithPlayer
 {
@@ -14,15 +15,14 @@ public class SaleZoneTrigger : MonoBehaviour, IInteractableWithPlayer
     public void InteractWithPlayer()
     {
 
-        foreach (GameObject gameObject in GameObjectList.instance.lemonadeOnThePlayer)
+        GameEvents.LoadRetryLemonades();
+
+        for (int i = 0; i < GameObjectList.instance.lemonadeListOnThePlayer.Count; i++)
         {
-        
-                gameObject.transform.SetParent(saleTable);     
-                gameObject.transform.localPosition = new Vector3(GameObjectList.instance.lemonadeOnTheSaleTable[GameObjectList.instance.lemonadeOnTheSaleTable.Count - 1].transform.localPosition.x + 0.2f, 0.9f , -0.5f);
-                GameObjectList.instance.lemonadeOnTheSaleTable.Add(gameObject);
+            GameObjectList.instance.lemonadeListOnTheSaleTable[i].SetActive(true);
         }
 
-        GameObjectList.instance.lemonadeOnThePlayer.Clear();
+        GameObjectList.instance.lemonadeListOnThePlayer.Clear();
 
     }
 }

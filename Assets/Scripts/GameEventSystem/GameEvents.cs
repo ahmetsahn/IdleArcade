@@ -12,6 +12,7 @@ public class GameEvents : MonoBehaviour
     public static UnityAction OnTriggerSaleZone;
     public static UnityAction<Lemon> OnStackLemons;
     public static UnityAction OnRetryLemons;
+    public static UnityAction OnRetryLemonades;
     
     
    
@@ -55,7 +56,9 @@ public class GameEvents : MonoBehaviour
         OnTriggerTakeLemonadeZone?.Invoke(); 
     }
 
-
-
+    public static void LoadRetryLemonades()
+    {
+        OnRetryLemonades?.Invoke();
+    }
 
 }
