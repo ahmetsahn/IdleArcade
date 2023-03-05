@@ -14,6 +14,7 @@ public class CustomerTriggerZone : MonoBehaviour, IInteractableWýthCustomer
             customer.customerMovement.StopMove();
             customer.customerAnimation.StopWalk();
             customer.customerMovement.SetRotation();
+            customer.SetDeactiveLemonadeImage();
 
             GameObjectList.instance.activeMoneyOnTheSaleTableCount = GameObjectList.instance.activeMoneyListOnTheSaleTable.Count;
             GameObjectList.instance.activeMoneyListOnTheSaleTable.Add(GameObjectList.instance.moneyListOnTheSaleTable[GameObjectList.instance.activeMoneyOnTheSaleTableCount]);

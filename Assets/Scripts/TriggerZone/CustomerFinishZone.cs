@@ -7,5 +7,6 @@ public class CustomerFinishZone : MonoBehaviour, IInteractableWýthCustomer
     public void InteractWithCustomer(Customer customer)
     {
         customer.SetTransformStartPos();
+        customer.SetActiveLemonadeImage();
     }
 }

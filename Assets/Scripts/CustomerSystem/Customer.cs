@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Customer : MonoBehaviour
 {
     public CustomerMovement customerMovement;
@@ -9,6 +10,9 @@ public class Customer : MonoBehaviour
 
     [SerializeField]
     private Transform startPos;
+
+    [SerializeField]
+    private GameObject lemonadeImage;
 
 
     private void Update()
@@ -29,5 +33,15 @@ public class Customer : MonoBehaviour
         transform.position = startPos.transform.position;
     }
 
-   
+    public void SetActiveLemonadeImage()
+    {
+        lemonadeImage.SetActive(true);
+    }
+
+    public void SetDeactiveLemonadeImage()
+    {
+        lemonadeImage.SetActive(false);
+    }
+
+
 }
