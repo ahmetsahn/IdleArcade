@@ -4,27 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Lemon1
-  - Tree1
-  - Table
-  - lemonadeTakeZone
-  - Lemonade
   - SaleZone
-  - Lemonade2
-  - Fire
-  - lemonadeOnTable
   - money
-  - MoneyTakeZone
   - Customer
-  - CustomerStopZone
-  - newTableZone
-  - newTreeZone
-  - lemonadeTakeZone2
-  - Table2
-  - Lemon2
-  - lemonadeOnTable2
-  - Tree2
-  - Tree
   layers:
   - Default
   - TransparentFX

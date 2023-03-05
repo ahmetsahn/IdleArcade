@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lemonade : MonoBehaviour
+public class LemonadeOnTheTable : MonoBehaviour
 {
     private Vector3 startPos;
 

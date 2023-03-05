@@ -17,10 +17,16 @@ public class GameObjectList : MonoBehaviour
     public List<GameObject> lemonadeListOnTheSaleTable = new List<GameObject>();
     
     public List<GameObject> activeLemonadeListOnTheSaleTable = new List<GameObject>();
-
-    public int activeLemonadeOnTheTableCount;
     
-    public int activeLemonadeOnTheSaleTableCount;
+    public List<GameObject> moneyListOnTheSaleTable = new List<GameObject>();
+
+    public List<GameObject> activeMoneyListOnTheSaleTable = new List<GameObject>();
+
+    public int activeLemonadeOnTheTableCount { get; set; }
+
+    public int activeLemonadeOnTheSaleTableCount { get; set; }
+    
+    public int activeMoneyOnTheSaleTableCount { get; set; }
 
 
 
