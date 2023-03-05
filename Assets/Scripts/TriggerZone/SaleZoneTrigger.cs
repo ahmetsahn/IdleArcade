@@ -11,7 +11,7 @@ public class SaleZoneTrigger : MonoBehaviour, IInteractableWithPlayer
     private Transform saleTable;
     public void InteractWithPlayer()
     {
-        if(GameObjectList.instance.lemonadeListOnThePlayer.Count>0)
+        if(GameObjectList.instance.lemonadeListOnThePlayer.Count > 0)
         {
             GameEvents.LoadRetryLemonades();
 

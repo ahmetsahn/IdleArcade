@@ -17,11 +17,18 @@ public class LemonadeOnTheSaleTable : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Customer"))
         {
-            transform.position = startPos;
-            gameObject.SetActive(false);   
+            StartCoroutine(StartMoveDelay());
+              
             GameObjectList.instance.activeLemonadeListOnTheSaleTable.RemoveAt(GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count - 1);
             Debug.Log("deðdi");
 
         }
+    }
+
+    IEnumerator StartMoveDelay()
+    {
+        yield return new WaitForSeconds(0.6f);
+        transform.position = startPos;
+        gameObject.SetActive(false);
     }
 }
