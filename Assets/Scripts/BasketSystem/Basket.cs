@@ -119,7 +119,7 @@ public class Basket : MonoBehaviour
 
     private void SetActiveLemonade()
     {
-        GameObjectList.instance.activeLemonadeOnTheTableCount += GameObjectList.instance.activeLemonadeListOnTheTable.Count;
+        GameObjectList.instance.activeLemonadeOnTheTableCount = GameObjectList.instance.activeLemonadeListOnTheTable.Count;
 
         for (int i = GameObjectList.instance.activeLemonadeOnTheTableCount; i < GameObjectList.instance.activeLemonadeOnTheTableCount + GameObjectList.instance.lemonListInBasket.Count-1; i++)
         {

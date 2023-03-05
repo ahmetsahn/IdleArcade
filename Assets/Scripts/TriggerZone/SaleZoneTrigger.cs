@@ -15,7 +15,7 @@ public class SaleZoneTrigger : MonoBehaviour, IInteractableWithPlayer
         {
             GameEvents.LoadRetryLemonades();
 
-            GameObjectList.instance.activeLemonadeOnTheSaleTableCount += GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count;
+            GameObjectList.instance.activeLemonadeOnTheSaleTableCount = GameObjectList.instance.activeLemonadeListOnTheSaleTable.Count;
 
             for (int i = GameObjectList.instance.activeLemonadeOnTheSaleTableCount; i < GameObjectList.instance.activeLemonadeOnTheSaleTableCount + GameObjectList.instance.lemonadeListOnThePlayer.Count; i++)
             {
