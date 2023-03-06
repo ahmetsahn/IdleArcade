@@ -113,26 +113,16 @@ public class Basket : MonoBehaviour
         SetParentNull();
     }
 
-    private void SetActiveLemonade()
-    {
-        GameObjectList.instance.activeLemonadeOnTheTableCount = GameObjectList.instance.activeLemonadeListOnTheTable.Count;
-
-        for (int i = GameObjectList.instance.activeLemonadeOnTheTableCount; i < GameObjectList.instance.activeLemonadeOnTheTableCount + GameObjectList.instance.lemonListInBasket.Count-1; i++)
-        {
-            GameObjectList.instance.lemonadeListOnTheTable[i].SetActive(true);
-            GameObjectList.instance.activeLemonadeListOnTheTable.Add(GameObjectList.instance.lemonadeListOnTheTable[i]);
-        }
-
-    }
+    
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         SetParentPlayer();
         SetTransformStartPos();
         BasketComponentSetDeactive();
         GameEvents.LoadRetryLemons();
-        SetActiveLemonade();
+       
         RemoveStackList();
     }
 

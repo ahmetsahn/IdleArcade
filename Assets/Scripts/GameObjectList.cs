@@ -8,10 +8,6 @@ public class GameObjectList : MonoBehaviour
 
     public List<GameObject> lemonListInBasket = new List<GameObject>();
 
-    public List<GameObject> lemonadeListOnTheTable = new List<GameObject>();
-
-    public List<GameObject> activeLemonadeListOnTheTable = new List<GameObject>();
-
     public List<GameObject> lemonadeListOnThePlayer = new List<GameObject>();
 
     public List<GameObject> lemonadeListOnTheSaleTable = new List<GameObject>();
@@ -21,8 +17,6 @@ public class GameObjectList : MonoBehaviour
     public List<GameObject> moneyListOnTheSaleTable = new List<GameObject>();
 
     public List<GameObject> activeMoneyListOnTheSaleTable = new List<GameObject>();
-
-    public int activeLemonadeOnTheTableCount { get; set; }
 
     public int activeLemonadeOnTheSaleTableCount { get; set; }
     
