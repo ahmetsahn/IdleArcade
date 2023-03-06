@@ -13,7 +13,7 @@ public class GameEvents : MonoBehaviour
     public static UnityAction<Lemon> OnStackLemons;
     public static UnityAction OnRetryLemons;
     public static UnityAction OnRetryLemonades;
-   
+    public static UnityAction<Player> OnMoneyMoveToPlayer;
 
 
 
@@ -61,6 +61,11 @@ public class GameEvents : MonoBehaviour
         OnRetryLemonades?.Invoke();
     }
 
-    
+    public static void LoadMoneyMoveToPlayer(Player player)
+    {
+        OnMoneyMoveToPlayer?.Invoke(player);
+    }
+
+
 
 }

@@ -16,12 +16,12 @@ public class CustomerTriggerZone : MonoBehaviour, IInteractableWýthCustomer
             customer.customerMovement.SetRotation();
             customer.SetDeactiveLemonadeImage();
 
-            GameObjectList.instance.activeMoneyOnTheSaleTableCount = GameObjectList.instance.activeMoneyListOnTheSaleTable.Count;
-            GameObjectList.instance.activeMoneyListOnTheSaleTable.Add(GameObjectList.instance.moneyListOnTheSaleTable[GameObjectList.instance.activeMoneyOnTheSaleTableCount]);
+            
+            GameObjectList.instance.activeMoneyListOnTheSaleTable.Add(GameObjectList.instance.moneyListOnTheSaleTable[GameObjectList.instance.activeMoneyListOnTheSaleTable.Count]);
             GameObjectList.instance.activeLemonadeListOnTheSaleTable[^1].gameObject.transform.DOMove(customer.transform.position, 1f).onComplete += () =>
             GameObjectList.instance.activeMoneyListOnTheSaleTable[^1].SetActive(true);
             
-           StartCoroutine(StartMoveDelay(customer));
+            StartCoroutine(StartMoveDelay(customer));
 
         }
     }

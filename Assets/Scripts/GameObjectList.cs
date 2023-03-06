@@ -26,7 +26,7 @@ public class GameObjectList : MonoBehaviour
 
     public int activeLemonadeOnTheSaleTableCount { get; set; }
     
-    public int activeMoneyOnTheSaleTableCount { get; set; }
+    
 
 
 
