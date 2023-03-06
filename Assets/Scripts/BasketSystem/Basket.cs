@@ -42,7 +42,7 @@ public class Basket : MonoBehaviour
     {
         if (other.gameObject.GetComponent<IInteractableWithBasket>() != null)
         {
-            other.gameObject.GetComponent<IInteractableWithBasket>().InteractWithBasket();
+            other.gameObject.GetComponent<IInteractableWithBasket>().InteractWithBasket(this);
             
         }
     }
@@ -60,11 +60,7 @@ public class Basket : MonoBehaviour
     }
 
 
-    private void BasketSetTransformOnTheTable()
-    {
-        transform.DOMove(basketTransformOnTheTable.position, 1f).onComplete += () =>
-        StartCoroutine(Wait());
-    }
+   
 
     private void SetParentNull()
     {
@@ -113,7 +109,7 @@ public class Basket : MonoBehaviour
 
     private void TriggerTable()
     {
-        BasketSetTransformOnTheTable();
+        StartCoroutine(Wait());
         SetParentNull();
     }
 
