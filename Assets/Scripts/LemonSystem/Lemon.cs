@@ -21,9 +21,6 @@ public class Lemon : MonoBehaviour, IInteractableWithPlayer
 
 
 
-
-
-
     private void Start()
     {
         startPos = transform.position;

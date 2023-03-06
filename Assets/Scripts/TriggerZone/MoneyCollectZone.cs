@@ -15,7 +15,6 @@ public class MoneyCollectZone : MonoBehaviour, IInteractableWithPlayer
             Debug.Log("Money collected");
             GameEvents.LoadMoneyMoveToPlayer(player);
             uiController.IncreamentMoney(GameObjectList.instance.activeMoneyListOnTheSaleTable.Count);
-            uiController.UpdateMoneyText();
             GameObjectList.instance.activeMoneyListOnTheSaleTable.Clear();
             
         }
