@@ -9,7 +9,7 @@ public class SaleZoneTrigger : MonoBehaviour, IInteractableWithPlayer
  
     [SerializeField]
     private Transform saleTable;
-    public void InteractWithPlayer()
+    public void InteractWithPlayer(Player player)
     {
         if(GameObjectList.instance.lemonadeListOnThePlayer.Count > 0)
         {

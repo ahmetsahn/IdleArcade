@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.GetComponent<IInteractableWithPlayer>() != null)
         {
-            other.gameObject.GetComponent<IInteractableWithPlayer>().InteractWithPlayer();
+            other.gameObject.GetComponent<IInteractableWithPlayer>().InteractWithPlayer(this);
         }
     }
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<IInteractableWithPlayer>() != null)
         {
-            collision.gameObject.GetComponent<IInteractableWithPlayer>().InteractWithPlayer();
+            collision.gameObject.GetComponent<IInteractableWithPlayer>().InteractWithPlayer(this);
         }
     }
 

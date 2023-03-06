@@ -32,7 +32,7 @@ public class Lemon : MonoBehaviour, IInteractableWithPlayer
 
 
 
-    public void InteractWithPlayer()
+    public void InteractWithPlayer(Player player)
     {  
         GameEvents.LoadBasketComponentSetActive();
         GameEvents.LoadStackLemons(this);

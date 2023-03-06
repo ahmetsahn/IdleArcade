@@ -11,7 +11,7 @@ public class UnlockTriggerZone : MonoBehaviour,IInteractableWithPlayer
     private int price;
     public TMP_Text priceText;
 
-    public void InteractWithPlayer()
+    public void InteractWithPlayer(Player player)
     {
         DOTween.To(() => price, x => price = x, 0, 2f);
     }

@@ -7,10 +7,10 @@ public class TreeTriggerZone : MonoBehaviour,IInteractableWithPlayer
     [SerializeField]
     protected GameObject[] lemons;
 
-    private void OnEnable() => GameEvents.OnTriggerTree += InteractWithPlayer;
+    private void OnEnable() => GameEvents.OnTriggerTree += SetGravityActive;
 
 
-    public void InteractWithPlayer()
+    public void InteractWithPlayer(Player player)
     {
         SetGravityActive();
     }

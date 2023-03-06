@@ -11,8 +11,6 @@ public class LemonadeOnTheSaleTable : MonoBehaviour
         startPos = transform.position;
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Customer"))

@@ -6,15 +6,13 @@ public class TableTriggerZoneForLemonade : MonoBehaviour, IInteractableWithPlaye
 {
    
 
-    [SerializeField]
-    private Transform player;
     
-    public void InteractWithPlayer()
+    public void InteractWithPlayer(Player player)
     {
         
         foreach (GameObject gameObject in GameObjectList.instance.activeLemonadeListOnTheTable)
         {
-                gameObject.transform.SetParent(player);
+                gameObject.transform.SetParent(player.transform);
                 GameObjectList.instance.lemonadeListOnThePlayer.Add(gameObject);
         }
 
